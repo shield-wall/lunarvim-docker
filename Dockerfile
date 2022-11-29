@@ -24,12 +24,6 @@ USER dev
 ENV PATH="$PATH:/home/dev/.local/bin"
 RUN /bin/bash ./install.sh
 
-#3.2 - Install nerdfonts(related with #2.2)
-RUN mkdir -p ~/.local/share/fonts \
-	&& cd ~/.local/share/fonts \
-	&& curl -fLo "Droid Sans Mono for Powerline Nerd Font Complete.otf" https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/DroidSansMono/complete/Droid%20Sans%20Mono%20Nerd%20Font%20Complete.otf \
-	&& fc-cache -f -v
-	
 #4 - Zsh config (related with #1)
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 RUN sed -i 's/robbyrussell/bira/g' ~/.zshrc
