@@ -23,6 +23,8 @@ USER dev
 #3.1 - Install lunavim (related with step #2.1)
 ENV PATH="$PATH:/home/dev/.local/bin"
 RUN /bin/bash ./install.sh
+COPY config.lua /home/dev/.config/lvim/config.lua
+CMD lvim +LiveUpdate +q
 
 #4 - Zsh config (related with #1)
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
