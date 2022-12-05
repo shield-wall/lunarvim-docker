@@ -14,7 +14,11 @@ docker build -t vim_workspace .
 Let's use the image that we build above.
 
 ```shell
-docker run --rm -it -v $(pwd):/app -v $HOME/.ssh/:/home/dev/.ssh/:ro vim_workspace
+docker run --rm -it -v $(pwd):/app -v $HOME/.ssh/:/home/dev/.ssh/:ro -v $HOME/.config/lvim/config.lua:/home/dev/.config/lvim/config.lua -v /var/run/docker.sock:/var/run/docker.sock:ro vim_workspace
 ```
+
+user: `dev`
+password: `dev`
+
 [lunavim_doc_fonts]: https://www.lunarvim.org/docs/configuration/nerd-fonts
 
