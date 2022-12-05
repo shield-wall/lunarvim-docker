@@ -45,7 +45,7 @@ docker-compose run --rm lvim
 lvim
 ```
 
-> **Info**
+> **Note**
 > 
 > You can also enable the entrypoint in your docker-composer.yml file with **lvim**!
 
