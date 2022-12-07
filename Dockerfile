@@ -1,5 +1,4 @@
-# syntax=docker/dockerfile:1
-FROM ubuntu as base
+FROM ubuntu as base-latest
 
 RUN apt-get update 
 
@@ -41,7 +40,7 @@ WORKDIR /app
 # ===================
 # ======= PHP =======
 # ===================
-FROM base as base-php
+FROM base-latest as base-php
 
 USER root
 
